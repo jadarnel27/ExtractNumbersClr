@@ -66,5 +66,10 @@ namespace ExtractNumbers.TestBed
 
             return numbers.Length == 0 ? null : builder.ToString();
         }
+
+        public static SqlString ExtractNumbersRegEx_Replace(SqlString input)
+        {
+            return new SqlString(Regex.Replace(input, @"\D+", string.Empty));
+        }
     }
 }
